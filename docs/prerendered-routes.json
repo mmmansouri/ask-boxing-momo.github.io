@@ -1,0 +1,8 @@
+{
+  "routes": [
+    "/",
+    "/adults",
+    "/kids",
+    "/the-club"
+  ]
+}
