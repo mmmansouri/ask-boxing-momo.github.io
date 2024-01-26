@@ -9,7 +9,6 @@ import {AccessToLocalsComponent} from "./access-to-locals/access-to-locals.compo
 
 export const routes: Routes = [
   { 'path':'', component: HomeComponent },
-  { 'path':'/', component: HomeComponent },
   { 'path':'adults', component: AdultsComponent },
   { 'path':'kids', component: KidsComponent },
   { 'path':'the-club', component: TheClubComponent },
