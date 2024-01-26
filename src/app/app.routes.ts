@@ -13,6 +13,9 @@ export const routes: Routes = [
   { 'path':'kids', component: KidsComponent },
   { 'path':'the-club', component: TheClubComponent },
   { 'path':'ladies', component: LadiesComponent },
-  { 'path':'the-muay-thai', component: TheMuayThaiComponent},
-  { 'path':'access-to-locals', component: AccessToLocalsComponent}
+  { 'path':'the-muay-thai', component: TheMuayThaiComponent },
+  { 'path':'access-to-locals', component: AccessToLocalsComponent },
+  //Wild Card Route for 404 request
+  { path: '**', pathMatch: 'full',
+    component: HomeComponent },
 ];
