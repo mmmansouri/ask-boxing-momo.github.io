@@ -5,6 +5,7 @@ import { KidsComponent } from "./kids/kids.component";
 import { TheClubComponent } from "./the-club/the-club.component";
 import { LadiesComponent } from "./ladies/ladies.component";
 import { TheMuayThaiComponent } from "./the-muay-thai/the-muay-thai.component";
+import {AccessToLocalsComponent} from "./access-to-locals/access-to-locals.component";
 
 export const routes: Routes = [
   { 'path':'', component: HomeComponent },
@@ -12,5 +13,6 @@ export const routes: Routes = [
   { 'path':'kids', component: KidsComponent },
   { 'path':'the-club', component: TheClubComponent },
   { 'path':'ladies', component: LadiesComponent },
-  { 'path':'the-muay-thai', component: TheMuayThaiComponent}
+  { 'path':'the-muay-thai', component: TheMuayThaiComponent},
+  { 'path':'access-to-locals', component: AccessToLocalsComponent}
 ];
