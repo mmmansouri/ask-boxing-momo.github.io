@@ -20,13 +20,12 @@ export class HomeComponent implements OnInit{
   constructor(private imagesService: ImagesService) {}
 
   ngOnInit(): void {
-    /*this.imagesService.getImagesList().subscribe((data) => {
+    this.imagesService.getImagesList('carousel-home-images').subscribe((data) => {
       this.carouselImages = data;
-    });*/
+    });
   }
 
-  getImagePath(image: string): string {
-    console.log(this.carouselImages)
-    return `assets/${image}`;
+  getImageURL(image: string): string {
+    return this.imagesService.getImageURL('home-gallery', image);
   }
 }

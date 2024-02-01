@@ -7,11 +7,15 @@ import { Observable } from 'rxjs';
 })
 export class ImagesService {
 
-  private apiUrl = '/api/carousel-home-images'; // Update with the correct API endpoint
+  private apiUrl = 'http://localhost:3000/api/'; // Update with the correct API endpoint
 
   constructor(private http: HttpClient) {}
 
-  getImagesList(): Observable<string[]> {
-    return this.http.get<string[]>(this.apiUrl);
+  getImagesList(targetApi: string): Observable<string[]> {
+    return this.http.get<string[]>(this.apiUrl + targetApi);
+  }
+
+  getImageURL(targetApi: string, targetImage: string): string {
+    return this.apiUrl + targetApi + '/' + targetImage;
   }
 }
