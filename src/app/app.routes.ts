@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from "./home/home.component";
-import { AdultsComponent } from "./adults/adults.component";
-import { KidsComponent } from "./kids/kids.component";
-import { TheClubComponent } from "./the-club/the-club.component";
-import { LadiesComponent } from "./ladies/ladies.component";
-import { TheMuayThaiComponent } from "./the-muay-thai/the-muay-thai.component";
-import {AccessToLocalsComponent} from "./access-to-locals/access-to-locals.component";
+import { HomeComponent } from "./pages/home/home.component";
+import { AdultsComponent } from "./pages/adults/adults.component";
+import { KidsComponent } from "./pages/kids/kids.component";
+import { TheClubComponent } from "./pages/the-club/the-club.component";
+import { LadiesComponent } from "./pages/ladies/ladies.component";
+import { TheMuayThaiComponent } from "./pages/the-muay-thai/the-muay-thai.component";
+import {AccessToLocalsComponent} from "./pages/access-to-locals/access-to-locals.component";
 
 export const routes: Routes = [
   { 'path':'', component: HomeComponent },
