@@ -1,9 +1,11 @@
 import { APP_BASE_HREF } from '@angular/common';
 import { CommonEngine } from '@angular/ssr';
-import express from 'express';
+import express, { Request, Response }  from 'express';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import bootstrap from './src/main.server';
+import * as path from 'path';
+import * as fs from 'fs';
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
@@ -13,9 +15,13 @@ export function app(): express.Express {
   const indexHtml = join(serverDistFolder, 'index.server.html');
 
   const commonEngine = new CommonEngine();
+  const cors = require('cors');
+
+  server.use(cors());
 
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
+
 
   // Example Express Rest API endpoints
   // server.get('/api/**', (req, res) => { });
@@ -27,7 +33,6 @@ export function app(): express.Express {
   // All regular routes use the Angular engine
   server.get('*', (req, res, next) => {
     const { protocol, originalUrl, baseUrl, headers } = req;
-
     commonEngine
       .render({
         bootstrap,
@@ -45,7 +50,7 @@ export function app(): express.Express {
 
 function run(): void {
   const port = process.env['PORT'] || 4000;
-
+  console.log('IM YA NIGGA');
   // Start up the Node server
   const server = app();
   server.listen(port, () => {

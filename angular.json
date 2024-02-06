@@ -41,6 +41,8 @@
           },
           "configurations": {
             "production": {
+              "ssr": false,
+              "prerender": false,
               "budgets": [
                 {
                   "type": "initial",
@@ -99,6 +101,9 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
