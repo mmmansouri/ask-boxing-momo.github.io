@@ -1,0 +1,17 @@
+tr {
+  position: relative;
+}
+
+tr.last-in-group::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(to right, red, black, red);
+}
+
+tr:not(.last-in-group)::after {
+  content: none;
+}

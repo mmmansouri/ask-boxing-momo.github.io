@@ -7,7 +7,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class ImagesService {
 
-  private apiUrl = 'http://localhost:3000/api/'; // Update with the correct API endpoint
+  private apiUrl = 'https://ask-boxing-momo-backend-a6969cea4b55.herokuapp.com/api/'; // Update with the correct API endpoint
+  //private apiUrl = 'http://localhost:3000/api/';
 
   private carouselImages: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
 

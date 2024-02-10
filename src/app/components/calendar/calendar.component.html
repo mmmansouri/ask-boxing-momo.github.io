@@ -8,54 +8,22 @@
         <thead>
         <tr class="bg-red-600 rounded-tl rounded-bl bg-gradient-to-r from-red-600  via-black to-red-600">
           <th class="px-4 py-3 title-font tracking-wider font-medium text-white text-sm ">Jour</th>
-          <th class="px-4 py-3 title-font tracking-wider font-medium text-white text-sm ">Adultes</th>
-          <th class="px-4 py-3 title-font tracking-wider font-medium text-white text-sm ">Enfants</th>
-          <th class="px-4 py-3 title-font tracking-wider font-medium text-white text-sm ">100% Feminines</th>
+          <th class="px-4 py-3 title-font tracking-wider font-medium text-white text-sm ">Période</th>
+          <th class="px-4 py-3 title-font tracking-wider font-medium text-white text-sm ">Catégorie</th>
+          <th class="px-4 py-3 title-font tracking-wider font-medium text-white text-sm ">Site</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td class="px-4 py-3 text-lg text-white">Lundi</td>
-          <td class="px-4 py-3 text-lg text-white"></td>
-          <td class="px-4 py-3 text-lg text-white">18h00-19h30</td>
-          <td class="px-4 py-3 text-lg text-white"></td>
-        </tr>
-        <tr>
-          <td class="border-t-2 border-red-900 px-4 py-3 text-lg text-white">Mardi</td>
-          <td class="border-t-2 border-red-900 px-4 py-3 text-lg text-white">19h00-21h00</td>
-          <td class="border-t-2 border-red-900 px-4 py-3 text-lg text-white"></td>
-          <td class="border-t-2 border-red-900 px-4 py-3 text-lg text-white"></td>
-        </tr>
-        <tr>
-          <td class="border-t-2 border-red-900 px-4 py-3 text-lg text-white">Mercredi</td>
-          <td class="border-t-2 border-red-900 px-4 py-3 text-lg text-white"></td>
-          <td class="border-t-2 border-red-900 px-4 py-3 text-lg text-white"></td>
-          <td class="border-t-2 border-red-900 px-4 py-3 text-lg text-white"></td>
-        </tr>
-        <tr>
-          <td class="border-t-2 border-b-2 border-red-900 px-4 py-3 text-lg text-white">Jeudi</td>
-          <td class="border-t-2 border-b-2 border-red-900 px-4 py-3 text-lg text-white">19h30-21h30</td>
-          <td class="border-t-2 border-b-2 border-red-900 px-4 py-3 text-lg text-white">18h00-19h30</td>
-          <td class="border-t-2 border-b-2 border-red-900 px-4 py-3 text-lg text-white"></td>
-        </tr>
-        <tr>
-          <td class="border-t-2 border-b-2 border-red-900 px-4 py-3 text-lg text-white">Vendredi</td>
-          <td class="border-t-2 border-b-2 border-red-900 px-4 py-3 text-lg text-white">18h30-20h00 au gymnase Carpentier</td>
-          <td class="border-t-2 border-b-2 border-red-900 px-4 py-3 text-lg text-white"></td>
-          <td class="border-t-2 border-b-2 border-red-900 px-4 py-3 text-lg text-white"></td>
-        </tr>
-        <tr>
-          <td class="border-t-2 border-b-2 border-red-900 px-4 py-3 text-lg text-white">Samedi</td>
-          <td class="border-t-2 border-b-2 border-red-900 px-4 py-3 text-lg text-white">12h00-14h00</td>
-          <td class="border-t-2 border-b-2 border-red-900 px-4 py-3 text-lg text-white"></td>
-          <td class="border-t-2 border-b-2 border-red-900 px-4 py-3 text-lg text-white">18h00-20h00</td>
-        </tr>
-        <tr>
-          <td class="border-t-2 border-b-2 border-red-900 px-4 py-3 text-lg text-white">Dimanche</td>
-          <td class="border-t-2 border-b-2 border-red-900 px-4 py-3 text-lg text-white"></td>
-          <td class="border-t-2 border-b-2 border-red-900 px-4 py-3 text-lg text-white"></td>
-          <td class="border-t-2 border-b-2 border-red-900 px-4 py-3 text-lg text-white">10h30-12h00</td>
-        </tr>
+        <ng-container *ngFor="let group of groupedCalendarItems">
+          <tr *ngFor="let item of group.items; let i = index" [class.last-in-group]="item.isLastInGroup">
+            <ng-container *ngIf="i === 0">
+              <td class="px-4 py-3 text-lg text-white align-top " [attr.rowspan]="group.items.length">{{group.day}}</td>
+            </ng-container>
+            <td class="px-4 py-3 text-lg text-white">{{item.period}}</td>
+            <td class="px-4 py-3 text-lg text-white">{{item.category}}</td>
+            <td class="px-4 py-3 text-lg text-white">{{item.site}}</td>
+          </tr>
+        </ng-container>
         </tbody>
       </table>
     </div>
